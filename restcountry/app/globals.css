@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --background: #FAFAFA;
+  --text-primary: hsl(200, 15%, 8%);
+  --text-card: hsl(0, 0%, 52%);
+  --card-nav: hsl(0, 0%, 100%);
+}
+
+[data-theme='dark'] {
+  --background: hsl(207, 26%, 17%);
+  --text-primary: hsl(0, 0%, 100%);
+  --card-nav: hsl(209, 23%, 22%);
+}
+
+.darkLightCardNav {
+  background-color: var(--card-nav);
+}
+
+.darkLightCardNav p,h2 {
+  color: var(--text-primary);
+  padding-left: 5px;
+}
+
+.darkLightCardNav::placeholder {
+  color: var(--text-primary);
+}
+
+.darkLightCardNav p {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.darkLightText {
+  color: var(--text-primary);
+}
+
+.darkLightBackground {
+  background-color: var(--background);
+}
+
+.container {
+  padding: 60px 77px;
+}
+
+.containerCard {
+  display: grid;
+  grid-template-columns: repeat(4, 269px);
+  row-gap: 70px;
+  column-gap: 150px;
+  justify-content: center;
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  max-width: 269px;
+  height: 337px;
+}
+
+.infoSpan {
+  font-weight: 600;
+}
+
+.containerImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.searchBar {
+  max-width: 475px;
+  flex-basis: 50%;
+}
+
+.filter {
+  flex-basis: 10%;
+}
+
+.containerSearch {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+@media only screen and (max-width: 712px) {
+  .containerCard {
+    grid-template-columns: auto;
+  }
+  .containerSearch {
+    flex-direction: column;
+  }
+  .filter {
+    margin-top: 20px;
+  }
+  .searchBar {
+    max-width: 100%;
+  }
+ }
+
+ @media only screen and (min-width: 713px) and (max-width: 1539px) {
+  .containerCard {
+    grid-template-columns: repeat(2,269px);
+  }
+  
+  .filter {
+    flex-basis: 30%;
+  }
+  .searchBar {
+    flex-basis: 30%;
+  }
+ }

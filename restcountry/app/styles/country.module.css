@@ -1,0 +1,142 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    min-height: 100vh;
+}
+
+.buttonBack {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100px;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin-top: 50px;
+    text-align: center;
+    padding: 5px;
+}
+
+.containerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.containerFrontCountry {
+    display: flex;
+}
+
+.containerFrontCountry p {
+    align-self: center;
+    margin-right: 30px;
+    color: var(--text-primary);
+}
+
+.containerFrontCountry span {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.countryFront {
+    border: 1px solid grey;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.10);
+    padding: 3px;
+    text-align: center;
+    align-self: center;
+}
+
+.containerLink {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+}
+
+.containerInfo {
+    display : grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 110px;
+    padding: 40px 0 80px 0;
+  }
+
+  .containerInfo p {
+    padding: 5px;
+    color: var(--text-primary);
+  }
+
+  .containerInfo span {
+   
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+.nativeName {
+    max-width: 250px;
+    grid-row: 1/5;
+}
+
+.containerCard {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.containerImage {
+    flex-basis: 30%;
+    position: relative;
+}
+
+@media screen and (max-width: 670px) {
+
+    .container {
+        padding-left: 15px;
+    }
+
+    .containerCard {
+        flex-direction: column;
+    }
+
+    .containerImage {
+        width: 75%;
+        height: auto;
+        min-height: 10vh;
+        align-self: center;
+    }
+
+    .containerImage {
+        flex-basis: 100%;
+    }
+
+    .containerInfo {
+        display: block;
+    }
+
+    .containerFrontCountry {
+        flex-wrap: wrap;
+    }
+
+    .containerLink {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+    }
+
+    .containerContent {
+        align-items: start;
+    }
+
+}
+    
+
+
+
+@media screen and (min-width: 481px) and (max-width: 766px) {
+
+    
+}
+    
