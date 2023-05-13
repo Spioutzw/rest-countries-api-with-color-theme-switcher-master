@@ -17,8 +17,6 @@ export default function Home() {
   const [countries, setCountries] = useState([])
   const [filteredCountries, setFilteredCountries] = useState([]);
 
-  console.log(filteredCountries)
-
   const handleRegion = (e) => {
     const SelectedRegion = e.target.value;
     setRegions(SelectedRegion);
@@ -31,6 +29,7 @@ export default function Home() {
 
   const handleSearchInput = (event, value) => {
     if (value) {
+      setSearch(value);
       setFilteredCountries(countries.filter(country => country.name.common.toLowerCase().includes(value.toLowerCase())));
     } else if (value === '') {
       // Do nothing
@@ -96,7 +95,7 @@ export default function Home() {
                     <div className='containerImage'><Image style={{objectFit:'cover'}} fill src={country.flags.png} alt={country.name.common} /></div>
                     <CardContent className='darkLightCardNav'>
                       <h2>{country.name.common}</h2>
-                      <p><span className='infoSpan'>Population:</span> {country.population}</p>
+                      <p><span className='infoSpan'>Population:</span> {country.population.toString().replace(/[^0-9]/g, 's').replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
                       <p><span className='infoSpan'>Région:</span> {country.region}</p>
                       <p><span className='infoSpan'>Capitale:</span> {country.capital}</p>
                     </CardContent>

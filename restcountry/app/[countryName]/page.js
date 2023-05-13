@@ -35,6 +35,8 @@ async function getBorderCountries(countryName) {
 
 
 
+
+
 export default function Country(props) {
 
     const [country, setCountry] = useState([])
@@ -44,17 +46,21 @@ export default function Country(props) {
         async function fetchData() {
             try {
                 const response = await axios.get(`https://restcountries.com/v3.1/name/${props.params.countryName}`)
+                
                 setCountry(response.data)
             } catch (err) {
                 console.log(err)
             }
         }
         fetchData()
-        console.log(props.params.countryName, 'props.params.countryName')
         getBorderCountries(props.params.countryName).then((borderCountries) => {
             setBorderCountries(borderCountries)
         })
     }, [])
+
+    // Convert the population number to a string and replace any non-numeric characters with the letter 's'
+
+
 
     if (!country[0]) {
         return <h1>Loading...</h1>
@@ -66,7 +72,7 @@ export default function Country(props) {
             <NavBar />
             <main>
                 <div className={`${style.container} darkLightBackground`}>
-                    <Link className={`${style.buttonBack} darkLightText `} href='/'> <ArrowBackIcon/> back </Link>
+                    <Link className={`${style.buttonBack} darkLightText `} href='/'> <ArrowBackIcon /> back </Link>
                     <div className={style.containerCard}>
                         <div className={style.containerImage}><Image fill className={style.IMG} src={country[0].flags.png} alt={country[0].name.common} /></div>
                         <div className={style.containerContent}>
@@ -80,7 +86,7 @@ export default function Country(props) {
                                             <> {`${' '}${value.official}${index === array.length - 1 ? '' : ','}`} </>
                                         ))}
                                     </p>
-                                    <p> <span>Population :</span> {country[0].population} habitant </p>
+                                    <p> <span>Population :</span> {country[0].population.toString().replace(/[^0-9]/g, 's').replace(/\B(?=(\d{3})+(?!\d))/g, ',')} habitant </p>
                                     <p> <span>Region :</span> {country[0].region}</p>
                                     <p> <span>Subregion :</span> {country[0].subregion} </p>
                                     <p> <span>Capital :</span> {country[0].capital}</p>
