@@ -68,7 +68,7 @@ export default function Country(props) {
                 <div className={`${style.container} darkLightBackground`}>
                     <Link className={`${style.buttonBack} darkLightText `} href='/'> <ArrowBackIcon/> back </Link>
                     <div className={style.containerCard}>
-                        <div className={style.containerImage}><Image fill style={{objectFit:'cover'}} src={country[0].flags.png} alt={country[0].name.common} /></div>
+                        <div className={style.containerImage}><Image fill className={style.IMG} src={country[0].flags.png} alt={country[0].name.common} /></div>
                         <div className={style.containerContent}>
                             <div>
                                 <div>
