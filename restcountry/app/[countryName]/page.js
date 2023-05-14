@@ -58,8 +58,6 @@ export default function Country(props) {
         })
     }, [])
 
-    // Convert the population number to a string and replace any non-numeric characters with the letter 's'
-
 
 
     if (!country[0]) {

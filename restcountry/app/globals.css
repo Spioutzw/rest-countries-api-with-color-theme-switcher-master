@@ -116,10 +116,25 @@ a {
   }
  }
 
- @media only screen and (min-width: 713px) and (max-width: 1539px) {
+ @media screen and (min-width: 713px ) and (max-width: 1300px) {
   .containerCard {
     grid-template-columns: repeat(2,269px);
+    
   }
+ }
+
+ @media screen and (min-width: 1301px) and (max-width: 1539px) {
+  .containerCard {
+    grid-template-columns: repeat(3,269px);
+    column-gap: 168px;
+    
+  }
+ }
+  
+ 
+
+ @media only screen and (min-width: 713px) and (max-width: 1539px) {
+  
   
   .filter {
     flex-basis: 30%;

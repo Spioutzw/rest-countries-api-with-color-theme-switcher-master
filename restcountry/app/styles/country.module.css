@@ -100,10 +100,15 @@
     position: unset !important;
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 1000px) {
 
     .container {
         padding-left: 15px;
+    }
+
+    .containerCard {
+        flex-direction: column;
+        align-items: center;
     }
 
     .containerImage {
@@ -131,12 +136,6 @@
 }
     
 
+    
 
-
-@media screen and (max-width: 1200px) {
-
-    .containerCard {
-        flex-direction: column;
-    }
-}
     
