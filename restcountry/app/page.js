@@ -80,7 +80,7 @@ export default function Home() {
               >
                 <MenuItem value='Europe'>Europe</MenuItem>
                 <MenuItem value='Africa'>Africa</MenuItem>
-                <MenuItem value='America'>America</MenuItem>
+                <MenuItem value='Americas'>Americas</MenuItem>
                 <MenuItem value='Oceania'>Oceania</MenuItem>
                 <MenuItem value='Asia'>Asia</MenuItem>
               </Select>
