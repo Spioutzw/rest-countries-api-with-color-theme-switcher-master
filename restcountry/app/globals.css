@@ -67,6 +67,7 @@ a {
   row-gap: 70px;
   column-gap: 150px;
   justify-content: center;
+  min-height: 744px;
 }
 
 .Card {

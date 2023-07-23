@@ -17,8 +17,8 @@ export default function NavBar() {
     }, [darkMode])
 
   return (
-    <AppBar className='darkLightCardNav' position="static" color='default' >
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+    <AppBar  position="static" color='default' >
+        <Toolbar className='darkLightCardNav' sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <p className='darkLightText'>Où dans le monde?</p>
           <p><IconButton onClick={handleChange} color="inherit">
             {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}

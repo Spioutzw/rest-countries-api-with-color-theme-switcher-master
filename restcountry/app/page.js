@@ -31,8 +31,6 @@ export default function Home() {
     if (value) {
       setSearch(value);
       setFilteredCountries(countries.filter(country => country.name.common.toLowerCase().includes(value.toLowerCase())));
-    } else if (value === '') {
-      // Do nothing
     } else {
       setFilteredCountries(countries);
     }
@@ -63,12 +61,13 @@ export default function Home() {
               options={countries.map((option) => option.name.common)}
               renderInput={(params) => (
                 <TextField {...params} InputProps={{
+                  className: 'darkLightText',
                   startAdornment: (
                     <InputAdornment sx={{paddingLeft:'4px'}} position="start">
                       <SearchIcon />
                     </InputAdornment>
                   ),
-                }}  InputLabelProps={{ className: 'darkLightText' }} label="Cherche un pays..." variant="outlined" />
+                }}  label="Cherche un pays..." variant="outlined" />
  )} />
             <FormControl className='filter'>
               <InputLabel className='darkLightText' id="demo-simple-select-label">Filtrer par région</InputLabel>
@@ -88,11 +87,14 @@ export default function Home() {
           </div>
 
           <div className='containerCard'>
-            {filteredCountries.slice(0, maxItems).map((country, index) => {
+          {filteredCountries.length === 0 ? (
+  <p>No result found</p>
+) : (
+          filteredCountries.slice(0, maxItems).map((country, index) => {
               return (
                 <Link key={index} href={`/${country.name.common}`}>
                   <Card key={index} className='darkLightCard Card'>
-                    <div className='containerImage'><Image style={{objectFit:'cover'}} fill src={country.flags.png} alt={country.name.common} /></div>
+                    <div className='containerImage'><Image style={{objectFit:'fill'}} fill src={country.flags.png} alt={country.name.common} /></div>
                     <CardContent className='darkLightCardNav'>
                       <h2>{country.name.common}</h2>
                       <p><span className='infoSpan'>Population:</span> {country.population.toString().replace(/[^0-9]/g, 's').replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
@@ -103,7 +105,8 @@ export default function Home() {
                 </Link>
               )
             }
-            )}
+            )
+)}
           </div>
         </div>
       </main>
