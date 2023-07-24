@@ -32,6 +32,7 @@ export default function Home() {
       setSearch(value);
       setFilteredCountries(countries.filter(country => country.name.common.toLowerCase().includes(value.toLowerCase())));
     } else {
+      setSearch(value);
       setFilteredCountries(countries);
     }
   };
@@ -67,11 +68,12 @@ export default function Home() {
                       <SearchIcon />
                     </InputAdornment>
                   ),
-                }}  label="Cherche un pays..." variant="outlined" />
+                }} InputLabelProps={{className:'darkLightText'}}  label="Cherche un pays..." variant="outlined" />
  )} />
             <FormControl className='filter'>
               <InputLabel className='darkLightText' id="demo-simple-select-label">Filtrer par région</InputLabel>
               <Select
+                className='darkLightText'
                 labelId='demo-simple-select-label'
                 label='Région'
                 value={regions}
